@@ -385,50 +385,47 @@ def main():
     global user_list
     size = (1100, 700)
 
-    # Minimum screen size
-    root.minsize(size[0], size[1])
-
     # Create and place canvases (one for banner, one for list rectangles)
-    back = Canvas(root, width=size[0], height=int(size[1]*0.8))
-    banner = Canvas(root, width=size[0], height=size[1], bg="black")
-    back.place(x=0, y=0)
-    banner.place(x=0, y=int(size[1]*0.8))
+    back = Canvas(root, width=1100, height=500)
+    banner = Frame(root, bg="blue")
+
+    button_frame = Frame(banner, bg="blue")
 
     # Create and place buttons
     b_rand = Button(
-        root, text="Generate Random List", padx=10, pady=10,
+        button_frame, text="Generate Random List", padx=10, pady=10,
         command=lambda: draw_list(back, size))
-    b_list = Button(root, text="Create a List", padx=10, pady=10)
+    b_list = Button(button_frame, text="Create a List", padx=10, pady=10)
     b_bub = Button(
-        root, text="Bubble Sort", padx=10, pady=10,
+        button_frame, text="Bubble Sort", padx=10, pady=10,
         command=lambda: bubble_sort(root, back))
     b_select = Button(
-        root, text="Selection Sort", padx=10, pady=10,
+        button_frame, text="Selection Sort", padx=10, pady=10,
         command=lambda: selection_sort(root, back))
     b_insert = Button(
-        root, text="Insertion Sort", padx=10, pady=10,
+        button_frame, text="Insertion Sort", padx=10, pady=10,
         command=lambda: insertion_sort(root, back))
-    # b_merge = Button(
-    #     root, text="Merge Sort", padx=10, pady=10,
-    #     command=lambda: merge_sort(root, back, size))
     b_merge = Button(
-        root, text="Merge Sort", padx=10, pady=10,
+        button_frame, text="Merge Sort", padx=10, pady=10,
         command=lambda: merge_sort_2(root, back))
-    b_rand.place(x=int(size[0]*0.1), y=int(size[1]*0.87))
-    b_list.place(x=int(size[0]*0.3), y=int(size[1]*0.87))
-    b_bub.place(x=int(size[0]*0.4), y=int(size[1]*0.87))
-    b_select.place(x=int(size[0]*0.5), y=int(size[1]*0.87))
-    b_insert.place(x=int(size[0]*0.6), y=int(size[1]*0.87))
-    b_merge.place(x=int(size[0]*0.7), y=int(size[1]*0.87))
 
-    slider = Scale(root, from_=0, to=100, orient=HORIZONTAL)
-    slider.place(x=int(size[0]*0.8), y=int(size[1]*0.87))
-    slider_button = Button(
-        root, text="Set Value", command=lambda: change_sleep(slider.get()))
-    slider_button.place(x=int(size[0]*0.8), y=int(size[1]*0.9)+20)
+    back.pack(fill=BOTH)
+    banner.pack(fill=BOTH)
 
-    banner.create_rectangle(
-        0, int(size[1]*0.8), size[0], size[1], fill="yellow")
+    button_frame.pack(anchor=CENTER)
+
+    b_rand.pack(side=LEFT, padx=10, pady=10)
+    b_list.pack(side=LEFT, padx=10, pady=10)
+    b_bub.pack(side=LEFT, padx=10, pady=10)
+    b_select.pack(side=LEFT, padx=10, pady=10)
+    b_insert.pack(side=LEFT, padx=10, pady=10)
+    b_merge.pack(side=LEFT, padx=10, pady=10)
+
+    # slider = Scale(root, from_=0, to=100, orient=HORIZONTAL)
+    # slider.place(x=int(size[0]*0.8), y=int(size[1]*0.87))
+    # slider_button = Button(
+    #     root, text="Set Value", command=lambda: change_sleep(slider.get()))
+    # slider_button.place(x=int(size[0]*0.8), y=int(size[1]*0.9)+20)
 
     root.mainloop()
 
