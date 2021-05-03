@@ -1,7 +1,10 @@
 import time
 from config import *
 
+
 def insertion_sort(master, canvas, user_list):
+    """Sorts the list using insertion sort algorithm and draws rectangles
+    representing items in the list as they are being sorted"""
 
     for i in range(len(user_list)):
         current_item = user_list[i]

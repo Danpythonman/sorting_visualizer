@@ -3,6 +3,7 @@ from config import *
 
 
 def find_min(start, user_list):
+    """Finds the smallest item in a list starting at a given index"""
 
     minimum = start
     for j in range(start, len(user_list)):
@@ -13,6 +14,8 @@ def find_min(start, user_list):
 
 
 def selection_sort(master, canvas, user_list):
+    """Sorts the list using selection sort algorithm and draws rectangles
+    representing items in the list as they are being sorted"""
 
     for i in range(len(user_list)):
 

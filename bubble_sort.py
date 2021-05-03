@@ -3,6 +3,8 @@ from config import *
 
 
 def bubble_sort(master, canvas, user_list):
+    """Sorts the list using bubble sort algorithm and draws rectangles
+    representing items in the list as they are being sorted"""
 
     n = len(user_list)
 

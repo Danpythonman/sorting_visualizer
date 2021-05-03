@@ -106,11 +106,11 @@ def main():
     b_insert.pack(side=LEFT, padx=10, pady=10)
     b_merge.pack(side=LEFT, padx=10, pady=10)
 
-    # slider = Scale(root, from_=0, to=100, orient=HORIZONTAL)
-    # slider.place(x=int(size[0]*0.8), y=int(size[1]*0.87))
-    # slider_button = Button(
-    #     root, text="Set Value", command=lambda: change_sleep(slider.get()))
-    # slider_button.place(x=int(size[0]*0.8), y=int(size[1]*0.9)+20)
+    slider = Scale(root, from_=0, to=100, orient=HORIZONTAL)
+    slider.place(x=int(size[0]*0.8), y=int(size[1]*0.87))
+    slider_button = Button(
+        root, text="Set Value", command=lambda: change_sleep(slider.get()))
+    slider_button.place(x=int(size[0]*0.8), y=int(size[1]*0.9)+20)
 
     root.mainloop()
 

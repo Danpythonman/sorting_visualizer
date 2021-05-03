@@ -4,11 +4,14 @@ from config import *
 
 
 def merge_sort_initialize(master, canvas, user_list):
+    """Calls the merge sort function with additional parameters"""
 
     merge_sort(user_list, 0, len(user_list), master, canvas)
 
 
 def merge_sort(arr, left, right, master, canvas):
+    """Recursive part of merge sort. Isolates the list into smaller and smaller
+    halves then merges all the halves"""
 
     mid = (left + right) // 2
     if left + 1 < right:
@@ -18,6 +21,8 @@ def merge_sort(arr, left, right, master, canvas):
 
 
 def merge(arr, start, middle, end, master, canvas):
+    """Merges the halves and draws rectangles represeting items in the list
+    during the merging"""
 
     left_size = middle - start
     right_size = end - middle
