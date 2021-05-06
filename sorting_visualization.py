@@ -72,15 +72,15 @@ def main():
 
     # Create and place canvases (one for banner, one for list rectangles)
     back = Canvas(root, width=1100, height=500)
-    banner = Frame(root, bg="blue")
+    banner = Frame(root, bg="black")
 
-    button_frame = Frame(banner, bg="blue")
+    button_frame = Frame(banner, bg="black")
 
     # Create and place buttons
     b_rand = Button(
         button_frame, text="Generate Random List", padx=10, pady=10,
         command=lambda: draw_list(back, size))
-    b_list = Button(button_frame, text="Create a List", padx=10, pady=10)
+    # b_list = Button(button_frame, text="Create a List", padx=10, pady=10)
     b_bub = Button(
         button_frame, text="Bubble Sort", padx=10, pady=10,
         command=lambda: bubble_sort(root, back, user_list))
@@ -100,7 +100,7 @@ def main():
     button_frame.pack(anchor=CENTER)
 
     b_rand.pack(side=LEFT, padx=10, pady=10)
-    b_list.pack(side=LEFT, padx=10, pady=10)
+    # b_list.pack(side=LEFT, padx=10, pady=10)
     b_bub.pack(side=LEFT, padx=10, pady=10)
     b_select.pack(side=LEFT, padx=10, pady=10)
     b_insert.pack(side=LEFT, padx=10, pady=10)
