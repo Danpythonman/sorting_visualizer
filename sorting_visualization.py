@@ -67,6 +67,8 @@ def main():
 
     root = Tk()
 
+    root.title("Sorting Visualization")
+
     global user_list
     size = (1100, 700)
 
